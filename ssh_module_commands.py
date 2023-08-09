@@ -3,7 +3,7 @@ import clear_data
 from config import USER
 from config import SECRET
 
-
+#это только для команд
 def mikrotik_request(host, ssh_command_to_device):
     wifi_key = ""
     #user = ''
@@ -28,7 +28,7 @@ def mikrotik_request(host, ssh_command_to_device):
     client.close()
 
     print("что мы получили от роутера:", data)
-    #Если строка условно пустая, то будем считать успех
+    #Если строка условно пустая, то будем считать успех и на случай ошибок выдаст ошибку
     try:
         if data == b'\r\n\r\n\r\n' or data== b'\r\n' or data == b'':
             print("test")
